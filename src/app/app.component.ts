@@ -8,6 +8,10 @@ import { DataService } from '../common/data.service';
 })
 export class AppComponent {
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+    dataService.getArtistInfoByName('Gal Gadot').subscribe(
+      artistsInfo => console.log(artistsInfo),
+    );
+  }
 }
 

@@ -18,6 +18,6 @@ export class DataService {
     }
 
     getArtistInfoByName(artistName: string) {
-        return this.http.get(`${this.baseUrl}/artists/${artistName}`);
+        return this.http.get(`${this.baseUrl}/artists/${artistName}?app_id=${this.appId}`);
     }
 }
