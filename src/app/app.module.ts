@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatExpansionModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { MatExpansionModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatIconModule,
+   MatTableModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -23,7 +24,7 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     FormsModule,
     MatIconModule,
-    RouterModule,
+    MatTableModule,
     RouterModule.forRoot(
       [
         { path: '', component: AppComponent}

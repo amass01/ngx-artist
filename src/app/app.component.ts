@@ -11,6 +11,8 @@ export class AppComponent {
 
   private _artistName: string;
   private _artistInfo: any;
+  private _artistEvents: any;
+  displayedColumns = ['venue', 'city', 'country', 'date'];
 
   constructor(private dataService: DataService,
               private router: Router
@@ -20,6 +22,10 @@ export class AppComponent {
     this.dataService.getArtistInfoByName(this._artistName)
       .subscribe(
         artistInfo => this._artistInfo = artistInfo,
+      );
+    this.dataService.getArtistEventsByName(this._artistName)
+      .subscribe(
+        artistEvents => this._artistEvents = artistEvents,
       );
   }
 
@@ -37,6 +43,10 @@ export class AppComponent {
 
   get artistInfo(): any {
     return this._artistInfo;
+  }
+
+  get artistEvents(): any {
+    return this._artistEvents;
   }
 }
 
