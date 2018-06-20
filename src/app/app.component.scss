@@ -4,7 +4,16 @@
     justify-content: center;
 }
 
-.ngx-artists__card {
+.ngx-artists__container-card {
     width: 75%;
     margin: 20px;
+}
+
+.ngx-artists-artist-card {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.ngx-artists-artist-card__img {
+    background-size: cover;
 }

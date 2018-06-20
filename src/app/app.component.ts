@@ -9,13 +9,14 @@ import { DataService } from '../common/data.service';
 export class AppComponent {
 
   private _artistName: string;
+  private _artistInfo: object;
 
   constructor(private dataService: DataService) { }
 
   searchArtist() {
     this.dataService.getArtistInfoByName(this._artistName)
       .subscribe(
-        (artistInfo) => console.log(artistInfo),
+        artistInfo => this._artistInfo = artistInfo,
       );
   }
 
@@ -25,6 +26,10 @@ export class AppComponent {
 
   set artistName(artistName) {
     this._artistName = artistName;
+  }
+
+  get artistInfo(): object {
+    return this._artistInfo;
   }
 }
 

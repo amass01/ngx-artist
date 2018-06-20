@@ -1,5 +1,5 @@
 <div class="ng-artists">
-    <mat-card class="ngx-artists__card">
+    <mat-card class="ngx-artists__container-card">
         <mat-card-title>
                 Search artist by name
         </mat-card-title>
@@ -8,7 +8,7 @@
                 <mat-expansion-panel (opened)="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Artist Name
+                            Search Bar
                         </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-form-field>
@@ -22,6 +22,21 @@
                         </mat-action-row>
                     </mat-expansion-panel>
             </mat-accordion>
+            <mat-card class="ngx-artists-artist-card"
+                      *ngIf="artistInfo != null">
+                      <mat-card-header>
+                        <img mat-card-avatar class="ngx-artists-artist-card__img"
+                                             src={{artistInfo.thumb_url}}
+                        >                   
+                        <mat-card-title>{{artistInfo.name}}</mat-card-title>
+                    </mat-card-header>
+                <img mat-card-image src="{{artistInfo.image_url}}" alt="Artist Photo">
+                <mat-card-content>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
         </mat-card-content>
     </mat-card>
 </div>
