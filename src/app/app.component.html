@@ -67,12 +67,16 @@
                     
                     <ng-container matColumnDef="date">
                         <th mat-header-cell *matHeaderCellDef> Date </th>
-                        <td mat-cell *matCellDef="let element"> {{element.datetime}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.datetime | date: 'EEEE, MMMM d, y'}} </td>
                     </ng-container>
                     
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
+                <p  class="ngx-artists-artist-table__empty-state"
+                    *ngIf="artistName && (artistEvents === null || artistEvents.length === 0)">
+                    No Events To Show
+                </p>
             </div>
         </mat-card-content>
     </mat-card>
