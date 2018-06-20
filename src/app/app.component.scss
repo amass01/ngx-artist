@@ -11,7 +11,7 @@
 
 .ngx-artists-artist-card {
     max-width: 400px;
-    margin-top: 20px;
+    max-height: 560px;
 }
 
 .ngx-artists-artist-card__thumb-img {
@@ -20,4 +20,11 @@
 
 .ngx-artists-artist-card__artist-img {
     margin-top: 10px;
+}
+
+.ngx-artists-artist-result {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
