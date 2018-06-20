@@ -45,7 +45,11 @@
                     </button>
                 </mat-card-actions>
             </mat-card>
-            <table mat-table [dataSource]="artistEvents" class="mat-elevation-z8">
+            <table mat-table 
+                   [dataSource]="artistEvents" 
+                   class="mat-elevation-z8"
+                   *ngIf="artistEvents != null"
+            >
 
                 <ng-container matColumnDef="venue">
                     <th mat-header-cell *matHeaderCellDef> Venue </th>
