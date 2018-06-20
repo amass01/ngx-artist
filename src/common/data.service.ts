@@ -24,7 +24,9 @@ export class DataService {
     }
 
     getArtistInfoByName(artistName: string): Observable<any> {
+        artistName = artistName.toLowerCase();
         if (this.artistInfoCache[artistName] && this.artistInfoCache[artistName].artistInfo) {
+            console.log(11111);
             return of(this.artistInfoCache[artistName].artistInfo);
         }
         return this.http.get(`${this.baseUrl}/artists/${artistName}?app_id=${this.appId}`)
@@ -40,7 +42,9 @@ export class DataService {
     }
 
     getArtistEventsByName(artistName: string): Observable<any> {
+        artistName = artistName.toLowerCase();
         if (this.artistEventsCache[artistName] && this.artistEventsCache[artistName].artistEvents) {
+            console.log(222222);
             return of(this.artistEventsCache[artistName].artistEvents);
         }
         return this.http.get(`${this.baseUrl}/artists/${artistName}/events?app_id=${this.appId}`)

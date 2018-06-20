@@ -74,7 +74,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <p  class="ngx-artists-artist-table__empty-state"
-                    *ngIf="artistName && (artistEvents === null || artistEvents.length === 0)">
+                    *ngIf="artistName && artistEvents && (artistEvents === null || artistEvents.length === 0)">
                     No Events To Show
                 </p>
             </div>
