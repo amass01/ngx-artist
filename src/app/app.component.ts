@@ -8,6 +8,23 @@ import { DataService } from '../common/data.service';
 })
 export class AppComponent {
 
+  private _artistName: string;
+
   constructor(private dataService: DataService) { }
+
+  searchArtist() {
+    this.dataService.getArtistInfoByName(this._artistName)
+      .subscribe(
+        (artistInfo) => console.log(artistInfo),
+      );
+  }
+
+  get artistName(): string {
+    return this._artistName;
+  }
+
+  set artistName(artistName) {
+    this._artistName = artistName;
+  }
 }
 

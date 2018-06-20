@@ -12,8 +12,14 @@
                         </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-form-field>
-                            <input matInput placeholder="Name">
+                            <input matInput
+                                   placeholder="Name"
+                                   [(ngModel)]="artistName"
+                            >
                         </mat-form-field>
+                        <mat-action-row>
+                            <button mat-button color="primary" (click)="searchArtist()">Search</button>
+                        </mat-action-row>
                     </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
