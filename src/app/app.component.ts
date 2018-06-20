@@ -22,10 +22,12 @@ export class AppComponent {
     this.dataService.getArtistInfoByName(this._artistName)
       .subscribe(
         artistInfo => this._artistInfo = artistInfo,
+        error => console.log(JSON.stringify(error, null, 2))
       );
     this.dataService.getArtistEventsByName(this._artistName)
       .subscribe(
         artistEvents => this._artistEvents = artistEvents,
+        error => console.log(JSON.stringify(error, null, 2))
       );
   }
 
