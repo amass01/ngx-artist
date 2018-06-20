@@ -25,16 +25,23 @@
             <mat-card class="ngx-artists-artist-card"
                       *ngIf="artistInfo != null">
                       <mat-card-header>
-                        <img mat-card-avatar class="ngx-artists-artist-card__img"
+                        <img mat-card-avatar class="ngx-artists-artist-card__thumb-img"
                                              src={{artistInfo.thumb_url}}
                         >                   
                         <mat-card-title>{{artistInfo.name}}</mat-card-title>
                     </mat-card-header>
-                <img mat-card-image src="{{artistInfo.image_url}}" alt="Artist Photo">
+                <img mat-card-image
+                     alt="Artist Photo"
+                     src="{{artistInfo.image_url}}"
+                     class="ngx-artists-artist-card__artist-img"
+                >
                 <mat-card-content>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-button>SHARE</button>
+                    <button mat-button color="primary"
+                            [disabled]="!artistInfo.facebook_page_url">
+                        Facebook
+                    </button>
                 </mat-card-actions>
             </mat-card>
         </mat-card-content>
